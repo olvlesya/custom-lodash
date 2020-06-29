@@ -45,4 +45,6 @@ const toPairs = (obj) => {
   return newArr;
 };
 
-module.exports = { pick, omit, pickBy, omitBy, toPairs };
+const merge = (obj1, obj2) => ({ ...obj1, ...obj2 });
+
+module.exports = { pick, omit, pickBy, omitBy, toPairs, merge };

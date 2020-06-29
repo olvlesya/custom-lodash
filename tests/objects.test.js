@@ -1,4 +1,11 @@
-const { pick, omit, pickBy, omitBy, toPairs } = require('../src/objects');
+const {
+  pick,
+  omit,
+  pickBy,
+  omitBy,
+  toPairs,
+  merge,
+} = require('../src/objects');
 
 describe('pick', () => {
   it('should return a new object  composed of the picked object properties', () => {
@@ -46,5 +53,16 @@ describe('toPairs', () => {
       ['a', 1],
       ['b', 2],
     ]);
+  });
+});
+
+describe('merge', () => {
+  it('should merge two objects', () => {
+    expect(merge({ a: 1, b: 2 }, { c: 3, d: 4 })).toEqual({
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+    });
   });
 });
